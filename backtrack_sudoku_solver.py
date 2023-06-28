@@ -156,10 +156,11 @@ def print_board(bo):
         if (i+1) % 9 == 0 and i < 26:
             print("---------------------")
 
-
+# Solves the sudoku board.
 def solve(bo):
     found_empty = find_empty(bo)
     if not found_empty:
+        # This means the board is complete.
         return True
     found_i, found_j = found_empty
     
@@ -183,6 +184,8 @@ def solve(bo):
     # Occurs if an impossible solution occurs.
     return False
 
+
+# Checks if a number works in a given position on the board.
 def validate(bo, num, pos):
     row = get_row(bo, row_idx(pos[0]))
     for i in range(9):
@@ -201,6 +204,7 @@ def validate(bo, num, pos):
 
     return True
 
+# Look for empty spaces on the board.
 def find_empty(bo):
     for i in range(len(bo)):
         for j in range(len(bo[i])):
