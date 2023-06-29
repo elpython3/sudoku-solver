@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}404 Not Found{% endblock %} {% block content%}
+<style>
+    .darken {
+        filter: brightness(0.4);
+}
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+    .emphasizer {
+          text-decoration-line: underline;
+          text-decoration-color: green;
+}
+
+</style>
+
+<h1 align="center"><u class="emphasizer">Oh No!</u></h1>
+
+
+<h3 align="center">You landed on an invalid site. No worries! If you just went here on accident, use the navigating bar on the top to go back to the home page!</h3>
+
+
+
+{% endblock %}

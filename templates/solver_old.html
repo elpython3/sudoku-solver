@@ -1,0 +1,141 @@
+{% extends "base.html" %} {% block title %}Sudoku Solver{% endblock %} {% block content%}
+<style>
+    .emphasizer {
+          text-decoration-line: underline;
+          text-decoration-color: green;
+    }
+    table {
+        margin:1em auto;
+    }
+    td {
+        height:90px;
+        width:90px;
+        border:1px solid;
+        text-align:center;
+        font-size:30px;
+    }
+    td:first-child {
+        border-left:solid;
+        font-size:30px;
+    }
+    td:nth-child(3n) {
+        border-right:solid ;
+        font-size:30px;
+    }
+    tr:first-child {
+        border-top:solid;
+        font-size:30px;
+        
+    }
+    tr:nth-child(3n) td {
+        border-bottom:solid ;
+        font-size:30px;
+    }
+</style>
+
+<h1 align="center"><u class="emphasizer">Sudoku Solver</u></h1>
+
+
+<table>
+<tr>
+    <td> <input type="text" size="1">  </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+<tr>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+    <td> x </td>
+</tr>
+</table>
+
+{% endblock %}

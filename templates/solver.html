@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Sudoku Solver{% endblock %} {% block content%}
+<style>
+    .emphasizer {
+          text-decoration-line: underline;
+          text-decoration-color: green;
+    }
+</style>
+
+<h1 align="center"><u class="emphasizer">Sudoku Solver</u></h1>
+
+<center>
+<div>
+<form action="/solve" method="POST">
+    <table>
+        {% for i in range(9) %}
+        <tr>
+            {% for j in range(9) %}
+            <td>
+                <input type="number" min="0" max="9" name="cell-{{ i }}-{{ j }}" value="{{ board[i][j] if board else '' }}">
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit" class="btn btn-primary">Solve</button>
+</form>
+</div>
+<form action="/gen" method="POST">
+    <button type="submit" class="btn btn-primary">Generate</button>
+</form>
+</center>
+
+{% endblock %}
