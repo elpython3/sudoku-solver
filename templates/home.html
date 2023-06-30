@@ -1,16 +1,77 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+{% extends "base.html" %} {% block title %}Play Sudoku{% endblock %} {% block content%}
 <style>
     .emphasizer {
           text-decoration-line: underline;
           text-decoration-color: green;
-}
+    }
+    table {
+        margin:0em auto;
+        /* color: cornflowerblue; */
+    }
+    td {
+        height:90px;
+        width:90px;
+        border:1px solid;
+        text-align:center;
+        font-size:30px;
+    }
+    td:first-child {
+        border-left:solid;
+        font-size:30px;
+    }
+    td:nth-child(3n) {
+        border-right:solid ;
+        font-size:30px;
+    }
+    tr:first-child {
+        border-top:solid;
+        font-size:30px;
+        
+    }
+    tr:nth-child(3n) td {
+        border-bottom:solid ;
+        font-size:30px;
+    }
+    input {
+        border: 0pc;
+        text-align: center;
+    }
 
+    button {
+        height: 90px;
+        width: 90px;
+        shape-outside: circle();
+    }
+
+    
 </style>
 
-<h1 align="center"><u class="emphasizer">Sudoku</u></h1>
+<h1 align="center"><u class="emphasizer">Play Sudoku</u></h1>
 
+<!-- <center> -->
 <div>
+    <form action="/input" method="POST">
+        <button type="submit" class="btn btn-primary">Input</button>
+    </form>
+    <form action="/check" method="POST">
+        <table align="left">
+            {% for i in range(9) %}
+            <tr>
+                {% for j in range(9) %}
+                <td>
+                    <input type="number" min="0" max="9" align="center" name="cell-{{ i }}-{{ j }}" value="{{ board[i][j] if board else '' }}">
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" class="btn btn-primary">Check</button>
+    </form>
+    <form action="/gen" method="POST">
+        <button type="submit" class="btn btn-warning">Generate</button>
+    </form>
 
 </div>
+<!-- </center> -->
 
 {% endblock %}

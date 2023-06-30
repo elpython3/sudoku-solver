@@ -41,7 +41,9 @@ def format(board):
                 # if j == 0:
                 if board[i][(3*j)+k] != 0:
                     subset.append([board[i][(3*j)+k]])
+                    # print(board[i][(3*j)+k])
                 else:
+                    # print("e")
                     subset.append([])
             bo.append(subset)
     return bo
