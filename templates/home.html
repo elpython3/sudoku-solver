@@ -8,6 +8,7 @@
         margin:0em auto;
         /* color: cornflowerblue; */
     }
+    
     td {
         height:90px;
         width:90px;
@@ -32,12 +33,17 @@
         border-bottom:solid ;
         font-size:30px;
     }
-    input {
+    .normal-input {
         border: 0pc;
         text-align: center;
     }
+    .incorrect-input {
+        border: 1pc;
+        text-align:center;
+        border-color: red;
+    }
 
-    button {
+    .big-button {
         height: 90px;
         width: 90px;
         shape-outside: circle();
@@ -51,7 +57,7 @@
 <!-- <center> -->
 <div>
     <form action="/input" method="POST">
-        <button type="submit" class="btn btn-primary">Input</button>
+        <button type="submit" class="btn btn-primary" style="width: 90px; height: 90px;">Input</button>
     </form>
     <form action="/check" method="POST">
         <table align="left">
@@ -59,16 +65,21 @@
             <tr>
                 {% for j in range(9) %}
                 <td>
-                    <input type="number" min="0" max="9" align="center" name="cell-{{ i }}-{{ j }}" value="{{ board[i][j] if board else '' }}">
+                    {% if (i, j) is in incorrect_list %}
+                        {% set is_incorrect = true %}
+                    {% else %}
+                        {% set is_incorrect = false %}
+                    {% endif %}
+                    <input type="number" min="0" max="9" align="center" name="cell-{{ i }}-{{ j }}" value="{{ board[i][j] if board else '' }}", class="incorrect-input">
                 </td>
                 {% endfor %}
             </tr>
             {% endfor %}
         </table>
-        <button type="submit" class="btn btn-primary">Check</button>
+        <button type="submit" class="btn btn-primary" style="width: 90px; height: 90px;">Check</button>
     </form>
-    <form action="/gen" method="POST">
-        <button type="submit" class="btn btn-warning">Generate</button>
+    <form action="/gen-play" method="POST">
+        <button type="submit" class="btn btn-warning" style="width: 90px; height: 90px;">Generate</button>
     </form>
 
 </div>

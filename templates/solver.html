@@ -37,11 +37,11 @@
         text-align: center;
     }
 
-    button {
+    /* button {
         height: 90px;
         width: 90px;
         shape-outside: circle();
-    }
+    } */
 
     
 </style>
@@ -50,9 +50,9 @@
 
 <!-- <center> -->
 <div>
-    <form action="/input" method="POST">
-        <button type="submit" class="btn btn-primary">Input</button>
-    </form>
+    <!-- <form action="/input" method="POST">
+        <button type="submit" class="btn btn-primary" style="width: 90px; height: 90px;">Input</button>
+    </form> -->
     <form action="/solve" method="POST">
         <table align="left">
             {% for i in range(9) %}
@@ -65,13 +65,13 @@
             </tr>
             {% endfor %}
         </table>
-        <button type="submit" class="btn btn-primary">Solve</button>
+        <button type="submit" class="btn btn-primary" style="width: 90px; height: 90px;">Solve</button>
     </form>
     <form action="/gen" method="POST">
-        <button type="submit" class="btn btn-warning">Generate</button>
+        <button type="submit" class="btn btn-warning" style="width: 90px; height: 90px;">Generate</button>
     </form>
     <form action="/clear" method="POST">
-        <button type="submit" class="btn btn-primary">Clear</button>
+        <button type="submit" class="btn btn-danger" style="width: 90px; height: 90px;">Clear</button>
     </form>
 
 </div>
